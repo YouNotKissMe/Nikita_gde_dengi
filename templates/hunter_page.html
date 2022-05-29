@@ -37,23 +37,19 @@
                             <li><a class="dropdown-item" href="{% url 'logout' %}">Выход</a></li>
 
 
-
                         </ul>
                     </li>
 
                 </ul>
-                {% if user.is_superuser %}
-
-                    ПОКА В СУПЕРРАЗРАБОТКЕ НЕ ФАКТ ЧТО ПОЙДЕТ В КОНЕЧНУЮ ВЕРСИЮ
-
-                    <button class="btn btn-outline-success" type="submit">Добавить аниме</button>
 
 
-                {% endif %}
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Кто потерялся ?" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Поиск</button>
+                <form class="d-flex" method="get">
+                    <input formmethod="get" class="form-control me-2" type="search" placeholder="Поиск"
+                           aria-label="Search" name="search">
+                    <button class="btn btn-outline-success" type="submit">
 
+                        Найти
+                    </button>
                 </form>
 
             </div>

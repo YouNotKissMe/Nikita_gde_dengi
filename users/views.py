@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
 from .forms import RegisterUserForm, AuthUserForm,HunterForm
@@ -8,6 +8,8 @@ from django.views.generic.edit import FormView, UpdateView, CreateView
 
 
 def user_cabinet(request):
+    if 'search' in request.GET and request.GET['search']:
+        return redirect('http://127.0.0.1:8000/anime/',request)
     if request.user.is_authenticated:
 
         return render(request,'hunter_page.html',{'user':request.user})
